@@ -9,17 +9,27 @@ import './App.css';
 function App() {
 
   const [user, setUser] = useState([]);
+  const [showModal, setShowModal] = useState(false);
 
   function handleCallbackResponse(response) {
     var token = response.credential
     var userObject = jwt_decode(token);
     setUser(userObject);
     document.getElementById("signInDiv").hidden = true;
+    closeModal()
   }
 
   function handleSignOut(event) {
     setUser({});
     document.getElementById("signInDiv").hidden = false;
+  }
+
+  const openModal = () => {
+    setShowModal(true);
+  }
+
+  const closeModal = () => {
+    setShowModal(false);
   }
 
   useEffect(() => {
@@ -52,7 +62,7 @@ function App() {
                 <button onClick={(e) => handleSignOut(e)}>Çıxış</button>
               </>
             ) : (
-              <button onClick={() => google.accounts.id.prompt()}>Log In</button>
+              <button onClick={openModal}>Log In</button>
             )}
           </div>
         </div>
@@ -62,6 +72,19 @@ function App() {
           <div><h1>info@msm.az</h1> <p>Texniki dəstək : (+994 12) 441 55 11</p> </div>
         </div>
       </div>
+      {showModal && (
+        <div className="modal-overlay">
+          <div className="modal">
+            <h2>Login with</h2>
+            <div className="modal-buttons">
+              <button className="modal-button" onClick={() => google.accounts.id.prompt()}>Google</button>
+              <button className="modal-button">Github</button>
+              <button className="modal-button">Bitbucket</button>
+            </div>
+            <button onClick={closeModal} className="modal-close-button">Close</button>
+          </div>
+        </div> 
+      )}
     </>
   );
 }
