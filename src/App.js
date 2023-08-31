@@ -80,6 +80,8 @@ function App() {
               <button className="modal-button" onClick={() => google.accounts.id.prompt()}>Google</button>
               <button className="modal-button">Github</button>
               <button className="modal-button">Bitbucket</button>
+              <button className="modal-button">Phone Number</button>
+              <button className="modal-button">E-Mail</button>
             </div>
             <button onClick={closeModal} className="modal-close-button">Close</button>
           </div>
