@@ -94,8 +94,8 @@ margin: 0;
 
 
 
-/* login box */
 
+/* Style for the modal overlay */
 .modal-overlay {
   position: fixed;
   top: 0;
@@ -106,34 +106,71 @@ margin: 0;
   display: flex;
   justify-content: center;
   align-items: center;
+  z-index: 1000;
 }
 
+/* Style for the modal box */
 .modal {
-  background-color: white;
+  background-color: #fff;
   padding: 20px;
   border-radius: 8px;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   text-align: center;
+  max-width: 450px; /* Updated size */
+  width: 90%; /* To keep the modal centered */
+  margin: auto;
+  margin-top: 100px; /* Adjust as needed for vertical positioning */
 }
 
-.modal-button {
-  display: block;
-  margin: 10px auto;
+/* Style for the modal header */
+.modal h2 {
+  font-size: 24px;
+  margin-bottom: 16px;
+}
+
+/* Style for the modal buttons */
+.modal-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 10px; /* Adjust the gap between buttons */
+}
+
+/* Style for the modal close button */
+.modal-close-button {
+  background-color: #ff0000; /* Set to red */
+  color: #fff;
+  border: none;
+  border-radius: 4px;
   padding: 10px 20px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+  margin-top: 20px;
+}
+
+.modal-close-button:hover {
+  background-color: #790000; /* Darker shade of red on hover */
+}
+
+/* Style for the individual login buttons */
+.modal-button {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 10px 15px; /* Adjust button padding */
+  font-size: 16px; /* Adjust font size */
+  width: 100%; /* Make the button take the full width */
+  border: none;
   background-color: #007bff;
   color: white;
-  border: none;
-  border-radius: 4px;
   cursor: pointer;
 }
 
-.modal-close-button {
-  display: block;
-  margin: 20px auto 0;
-  padding: 10px 20px;
-  background-color: #dc3545;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+.modal-button:hover {
+  background-color: #0056b3;
 }
+
+.modal-button i {
+  margin-right: 10px; /* Add some space between icon and text */
+  margin-left: -5px; /* Move the icon to the far left */
+}
+

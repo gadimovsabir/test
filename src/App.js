@@ -77,15 +77,25 @@ function App() {
           <div className="modal">
             <h2>Login with</h2>
             <div className="modal-buttons">
-              <button className="modal-button" onClick={() => google.accounts.id.prompt()}>Google</button>
-              <button className="modal-button">Github</button>
-              <button className="modal-button">Bitbucket</button>
-              <button className="modal-button">Phone Number</button>
-              <button className="modal-button">E-Mail</button>
+              <button className="modal-button" onClick={() => google.accounts.id.prompt()}>
+                <i className="fas fa-google"></i> Google
+              </button>
+              <button className="modal-button">
+                <i className="fab fa-github"></i> Github
+              </button>
+              <button className="modal-button">
+                <i className="fab fa-bitbucket"></i> Bitbucket
+              </button>
+              <button className="modal-button">
+                <i className="fas fa-phone"></i> Phone Number
+              </button>
+              <button className="modal-button">
+                <i className="fas fa-envelope"></i> E-Mail
+              </button>
             </div>
             <button onClick={closeModal} className="modal-close-button">Close</button>
           </div>
-        </div> 
+        </div>
       )}
     </>
   );
