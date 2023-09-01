@@ -155,18 +155,20 @@ margin: 0;
 .modal-button {
   display: flex;
   align-items: center;
-  justify-content: flex-start;
+  justify-content: center; 
   padding: 10px 15px; /* Adjust button padding */
   font-size: 16px; /* Adjust font size */
   width: 100%; /* Make the button take the full width */
   border: none;
-  background-color: #007bff;
-  color: white;
+  background-color: #222;
+  color: #999999;
   cursor: pointer;
+  border-radius: 15px;
 }
 
 .modal-button:hover {
-  background-color: #0056b3;
+  color: #fff;
+  cursor: pointer;
 }
 
 .modal-button i {
